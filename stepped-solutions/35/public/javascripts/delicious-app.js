@@ -9,4 +9,4 @@ autocomplete( $('#address'), $('#lat'), $('#lng') );
 
 typeAhead( $('.search') );
 
-makeMap( $('#map') );
+makeMap( $('#mapid') );

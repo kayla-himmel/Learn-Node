@@ -10,7 +10,7 @@ autocomplete( $('#address'), $('#lat'), $('#lng') );
 
 typeAhead( $('.search') );
 
-makeMap( $('#map') );
+makeMap( $('#mapid') );
 
 const heartForms = $$('form.heart');
 heartForms.on('submit', ajaxHeart);

@@ -1,11 +1,4 @@
 extends layout
 
-//- if this is uncommented, it will override was is laid out in layout.pug
-//- block header
-//-   h1 Yo!
-
 block content
-  h2 Sale ends #{h.moment().endOf('month').fromNow()}
-
-block footer
-  span Thanks!
+  h2 Sale ends in #{h.moment().endOf('day').fromNow()}

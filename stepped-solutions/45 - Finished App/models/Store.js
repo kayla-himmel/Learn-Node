@@ -64,7 +64,6 @@ storeSchema.pre('save', async function(next) {
     this.slug = `${this.slug}-${storesWithSlug.length + 1}`;
   }
   next();
-  // TODO make more resiliant so slugs are unique
 });
 
 storeSchema.statics.getTagsList = function() {

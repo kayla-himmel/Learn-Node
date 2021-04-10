@@ -1,8 +1,11 @@
-import '../sass/style.scss';
-import createMap from './modules/map';
-
-import { $, $$ } from './modules/bling';
+import '../sass/styleNew.css';
+import { $ } from './modules/bling';
 import autocomplete from './modules/autocomplete';
+import typeAhead from './modules/typeAhead';
+import makeMap from './modules/map';
 
 autocomplete( $('#address'), $('#lat'), $('#lng') );
-createMap( $('#mapid') );
+
+typeAhead( $('.search') );
+
+makeMap( $('#mapid') );

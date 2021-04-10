@@ -1,5 +1,15 @@
 const mongoose = require('mongoose');
 
+// MONGODB connection
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://kayla:OY75CiJS5bGmQWDL@delicious.wknvr.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: 'variables.env' });
 
@@ -7,11 +17,12 @@ require('dotenv').config({ path: 'variables.env' });
 mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', (err) => {
-  console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
+  console.error(`ERROR: ${err.message}`);
 });
 
-// Import our models
-require('./models/Store')
+// import all of our models
+require('./models/Store');
+require('./models/User');
 
 // Start our app!
 const app = require('./app');

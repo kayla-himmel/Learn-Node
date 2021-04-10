@@ -81,7 +81,6 @@ const confirmOwner = (store, user) => {
   }
 };
 
-
 exports.editStore = async (req, res) => {
   // 1. Find the store given the ID
   const store = await Store.findOne({ _id: req.params.id });
@@ -118,10 +117,8 @@ exports.getStoresByTag = async (req, res) => {
   const storesPromise = Store.find({ tags: tagQuery });
   const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
 
-
   res.render('tag', { tags, title: 'Tags', tag, stores });
 };
-
 
 exports.searchStores = async (req, res) => {
   const stores = await Store

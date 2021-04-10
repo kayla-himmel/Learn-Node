@@ -1,4 +1,4 @@
-import '../sass/style.scss';
+import '../sass/style.css';
 
 import { $, $$ } from './modules/bling';
 import autocomplete from './modules/autocomplete';

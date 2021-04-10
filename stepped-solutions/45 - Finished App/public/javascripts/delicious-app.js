@@ -1,4 +1,4 @@
-import '../sass/style.scss';
+import '../sass/style.css';
 
 import { $, $$ } from './modules/bling';
 import autocomplete from './modules/autocomplete';
@@ -10,7 +10,7 @@ autocomplete( $('#address'), $('#lat'), $('#lng') );
 
 typeAhead( $('.search') );
 
-makeMap( $('#map') );
+makeMap( $('#mapid') );
 
 const heartForms = $$('form.heart');
 heartForms.on('submit', ajaxHeart);
